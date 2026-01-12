@@ -89,7 +89,17 @@ h1{
   font-weight:600;
   font-size:14px;
 }
-
+#btnSaludo{
+   border-radius:7px;
+  background-color: orange;
+    border: 1px solid rgba(255,255,255,0.04);
+}
+#btnSaludo:hover {
+  border-radius:7px;
+  background-color: rgb(126, 82, 1);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: white;
+}
 .btn.secondary{
   color:#cfe7f2;
   background:transparent;
