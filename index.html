@@ -1,93 +1,28 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bienvenidos — Servidor AWS EC2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bienvenidos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card" role="main">
 
-      <div class="main">
-        <div class="logo">
-          <span class="dot" aria-hidden="true"></span>
-          <div>
-            <div class="logo-title">
-              <img src="aws.png" alt="AWS" class="logo-img">
-              <strong>Servidor AWS EC2</strong>
-            </div>
-            <div class="small">Instancia activa — Bienvenido</div>
-          </div>
-        </div>
+  <div class="card">
+    <img src="imagenes/img1.png" alt="" id="imgs">
+    <h1>Bienvenidos a mi web</h1>
 
-        <h1>Bienvenidos a Mi Web Estática
-        </h1>
-        <p class="lead">
-          Hola a todos, esta es la página de inicio personalizada de tu instancia EC2. Puedes editar este archivo en:
-          <code>/var/www/html/index.html</code> para personalizar el contenido.
-        </p>
-
-        <div class="buttons">
-          <a class="btn" href="#" onclick="scrollInfo()">Ver información</a>
-          <a class="btn secondary" href="https://aws.amazon.com/ec2/" target="_blank" rel="noopener">Ir a EC2</a>
-        </div>
-
-        <div class="info" id="infoBox">
-          <div class="chip">Estado: <strong class="accent">Activo</strong></div>
-          <div class="chip">Servidor web: <strong>Apache / Nginx</strong></div>
-          <div class="chip">DocumentRoot: <strong>/var/www/html</strong></div>
-        </div>
-
-        <p class="note">
-          Consejo: Si haces cambios y no ves nada, tendrás que recargar la página con Ctrl+F5 o comprueba que Apache está en
-          ejecución.
-        </p>
-      </div>
-
-      <aside class="aside" aria-label="Panel lateral">
-        <div>
-          <strong>Información rápida</strong>
-          <div class="small info-list">
-            - Editar desde SSH: <code>sudo nano /var/www/html/index.html</code><br>
-            - Copia de seguridad: <code>sudo cp index.html index.html.bak</code><br>
-            - Reiniciar Apache: <code>sudo systemctl restart apache2</code>
-          </div>
-        </div>
-
-        <div>
-          <strong>Enlaces útiles</strong>
-          <div class="small info-list">
-            - Documentación EC2: <a href="https://docs.aws.amazon.com/ec2" target="_blank" rel="noopener">docs.aws.amazon.com</a><br>
-            - Seguridad: abre el puerto 80 en tu Security Group.
-          </div>
-        </div>
-        <hr>
-        <div>
-          <strong>¿Quién nos visita?</strong><br> 
-          <label id="lblNombre">Nombre:</label><br>
-          <input type="text" id="nombrecito">
-          <input type="submit" value="Enviar" id="btnSaludo"><br>
-
-          <label id="saludo"></label>
-        </div>
-
-        <div class="time-box">
-          <div class="small">Generado: <strong id="time"></strong></div>
-        </div>
-      </aside>
-
+    <div class="form-group">
+      <h3>Nombre:</h3><br>
+      <input type="text" id="nombrecito" placeholder="Escribe tu nombre">
+      <button id="btnSaludo">Enviar</button>
     </div>
-  </div>
 
-  <footer>
-    © Servidor AWS EC2 — Página creada para prácticas
-  </footer>
+    <p id="saludo"></p>
+    <p>Última actualización: <strong id="time"></strong></p>
+  </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
