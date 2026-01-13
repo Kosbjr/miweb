@@ -15,7 +15,7 @@ window.onload = function(){
 
     if(nombre === ""){
       // saludo.textContent = "Anónimo";
-      nombre = "Anónimo"
+      nombre.value = "Anónimo"
     }else{
       saludo.textContent = `¡Hola ${nombre}, Bienvenido a mi Servidor!`;
     }
