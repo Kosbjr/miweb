@@ -14,9 +14,10 @@
     <h1>Bienvenidos a mi web</h1>
 
     <div class="form-group">
-      <h3>Nombre:</h3><br>
-      <input type="text" id="nombrecito" placeholder="Escribe tu nombre">
-      <button id="btnSaludo">Enviar</button>
+      <form action="saludo.php" method="post">
+        <input type="text" name="nombre">
+        <input type="submit" name="enviar" value="Enviar">
+      </form>
     </div>
 
     <p id="saludo"></p>
