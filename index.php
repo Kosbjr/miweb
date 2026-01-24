@@ -9,6 +9,12 @@
 
 <body>
 
+<?php
+  session_start();
+  // Si no existe saludo en sesión, dejamos un texto por defecto
+  $saludo = $_SESSION['saludo'] ?? '';
+?>
+
   <div class="card">
     <img src="imagenes/img1.png" alt="" id="imgs">
     <h1>Bienvenidos a mi web</h1>
@@ -21,15 +27,11 @@
     </div>
 
     <p id="saludo">
-  <?php
-    if (isset($_GET['saludo'])) {
-        echo $_GET['saludo'];
-    }
-  ?>
-</p>
+      <?php echo $saludo; ?>
+    </p>
+
     <p>Última actualización: <strong id="time"></strong></p>
     <br>
-    
   </div>
 
   <script src="script.js"></script>
