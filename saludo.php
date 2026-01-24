@@ -1,12 +1,10 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['nombre'])) {
+if (!empty($_POST['nombre'])) {
     $nombre = htmlspecialchars($_POST['nombre']);
-    $mensaje = "¡Hola $nombre, Bienvenido a Mi Web!";
+    header("Location: index.php?saludo=¡Hola+$nombre, Bienvenido a Mi Web!");
+    exit;
 } else {
-    $mensaje = "Introduce un nombre válido";
+    header("Location: index.php?saludo=Introduce+un+nombre");
+    exit;
 }
-
-// Redirigimos a index.php pasando el mensaje como GET **temporal**
-// No es sensible, solo texto visible
-header("Location: index.php?mensaje=" . urlencode($mensaje));
-exit;
+?>
