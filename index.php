@@ -22,8 +22,8 @@
 
     <p id="saludo">
   <?php
-    if (isset($_POST['saludo'])) {
-        echo $_POST['saludo'];
+    if (isset($_GET['saludo'])) {
+        echo $_GET['saludo'];
     }
   ?>
 </p>
