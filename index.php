@@ -3,7 +3,7 @@ session_start();
 
 // Recuperamos el saludo guardado en sesión, si existe
 $saludo = $_SESSION['saludo'] ?? '';
-echo $error;
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -28,7 +28,7 @@ echo $error;
   </div>
 
   <!-- Mostramos el saludo guardado en sesión -->
-  <p id="saludo"><?php echo $saludo_error; ?></p>
+  <p id="saludo"><?php echo $saludo; ?></p>
 
   <p>Última actualización: <strong id="time"></strong></p>
   <br>
