@@ -28,7 +28,7 @@ echo $error;
   </div>
 
   <!-- Mostramos el saludo guardado en sesión -->
-  <p id="saludo"><?php echo $saludo; ?></p>
+  <p id="saludo"><?php echo $saludo_error; ?></p>
 
   <p>Última actualización: <strong id="time"></strong></p>
   <br>
