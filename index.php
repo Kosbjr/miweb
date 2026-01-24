@@ -20,7 +20,13 @@
       </form>
     </div>
 
-    <p id="saludo"></p>
+    <p id="saludo">
+  <?php
+    if (isset($_GET['saludo'])) {
+        echo $_GET['saludo'];
+    }
+  ?>
+</p>
     <p>Última actualización: <strong id="time"></strong></p>
     <br>
     

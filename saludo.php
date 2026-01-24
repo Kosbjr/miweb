@@ -1,8 +1,10 @@
 <?php
-if (isset($_POST['nombre']) && $_POST['nombre'] != "") {
+if (!empty($_POST['nombre'])) {
     $nombre = htmlspecialchars($_POST['nombre']);
-    echo "¡Hola, $nombre! 👋 Bienvenido a la web.";
+    header("Location: index.php?saludo=¡Hola+$nombre, Bienvenido a Mi Web!");
+    exit;
 } else {
-    echo "Por favor, introduce un nombre.";
+    header("Location: index.php?saludo=Introduce+un+nombre");
+    exit;
 }
 ?>
