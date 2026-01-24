@@ -1,10 +1,14 @@
 <?php
-if (!empty($_POST['nombre'])) {
+session_start();
+
+// Solo aceptamos POST y un nombre no vacío
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['nombre'])) {
     $nombre = htmlspecialchars($_POST['nombre']);
-    header("Location: index.php?saludo=¡Hola+$nombre, Bienvenido a Mi Web!");
-    exit;
+    $_SESSION['saludo'] = "¡Hola $nombre, Bienvenido a Mi Web!";
 } else {
-    header("Location: index.php");
-    exit;
+    $_SESSION['saludo'] = "Introduce un nombre válido";
 }
-?>
+
+// Redirigimos de vuelta a index.php
+header("Location: index.php");
+exit;
