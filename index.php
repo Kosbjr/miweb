@@ -3,6 +3,7 @@ session_start();
 
 // Recuperamos el saludo guardado en sesión, si existe
 $saludo = $_SESSION['saludo'] ?? '';
+echo $error;
 ?>
 <!doctype html>
 <html lang="es">
