@@ -1,3 +1,8 @@
+<?php
+session_start();
+// Si no existe saludo en sesión, dejamos un texto por defecto
+$saludo = $_SESSION['saludo'] ?? '';
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -8,13 +13,6 @@
 </head>
 
 <body>
-
-<?php
-  session_start();
-  // Si no existe saludo en sesión, dejamos un texto por defecto
-  $saludo = $_SESSION['saludo'] ?? '';
-?>
-
   <div class="card">
     <img src="imagenes/img1.png" alt="" id="imgs">
     <h1>Bienvenidos a mi web</h1>
