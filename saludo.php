@@ -1,10 +1,12 @@
 <?php
-if (!empty($_POST['nombre'])) {
-    $nombre = htmlspecialchars($_POST['nombre']);
-    header("Location: index.php?saludo=¡Hola+$nombre, Bienvenido a Mi Web!");
-    exit;
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['nombre'])) {
+    $nombre = $_POST['nombre'];
+    $_SESSION['saludo'] = "¡Hola " . htmlspecialchars($nombre) . ", Bienvenido a Mi Web!";
 } else {
-    header("Location: index.php?saludo=Introduce+un+nombre");
-    exit;
+    $_SESSION['saludo'] = "Introduce un nombre";
 }
-?>
+
+header("Location: index.php");
+exit;
