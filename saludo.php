@@ -13,7 +13,6 @@ if (isset($_POST['nombre']) && $_POST['nombre'] != "") {
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows > 0) {
-        // Usuario existe → sumar visita
         $fila = $resultado->fetch_assoc();
         $visitas = $fila['visitas'] + 1;
 
@@ -22,7 +21,6 @@ if (isset($_POST['nombre']) && $_POST['nombre'] != "") {
         $stmt2->bind_param("is", $visitas, $nombre);
         $stmt2->execute();
     } else {
-        // Usuario nuevo
         $visitas = 1;
         $insert = "INSERT INTO usuarios (nombre, visitas) VALUES (?, ?)";
         $stmt2 = $conn->prepare($insert);
@@ -30,7 +28,7 @@ if (isset($_POST['nombre']) && $_POST['nombre'] != "") {
         $stmt2->execute();
     }
 
-    // Obtener saludo aleatorio
+    // Saludo aleatorio
     $saludoSQL = "SELECT mensaje FROM saludos ORDER BY RAND() LIMIT 1";
     $saludoResult = $conn->query($saludoSQL);
     $saludo = $saludoResult->fetch_assoc()['mensaje'];
