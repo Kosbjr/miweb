@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "conexion.php";
 
 if (isset($_POST['nombre']) && $_POST['nombre'] != "") {
@@ -33,10 +34,11 @@ if (isset($_POST['nombre']) && $_POST['nombre'] != "") {
     $saludoResult = $conn->query($saludoSQL);
     $saludo = $saludoResult->fetch_assoc()['mensaje'];
 
-    echo "<h2>$saludo</h2>";
-    echo "<p>Hola <strong>$nombre</strong>, has visitado esta página <strong>$visitas</strong> veces.</p>";
+    // Guardamos el saludo en sesión
+    $_SESSION['saludo'] = "$saludo<br>Hola <strong>$nombre</strong>, has visitado esta página <strong>$visitas</strong> veces.";
 
-} else {
-    echo "Por favor, introduce un nombre.";
 }
-?>
+
+// Volvemos al index
+header("Location: index.php");
+exit;
