@@ -1,8 +1,9 @@
 <?php
 $host = "localhost";
-$user = "adminweb";
-$pass = "MesaMorada";
 $db = "visitas_web";
+$user = "webadmin";
+$pass = "MesaMorada";
+
 
 $conn = new mysqli($host, $user, $pass, $db);
 
